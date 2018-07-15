@@ -145,7 +145,7 @@ LockAccessory.prototype.setState = function(state, callback) {
 
             callback(null); // success
 
-            if (this.autolock)
+            if (this.autolock == "true")
             {
               var self = this;
                 setTimeout(function() {
