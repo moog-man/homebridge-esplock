@@ -15,6 +15,7 @@ function LockAccessory(log, config) {
     this.lockID = config["lock-id"];
     this.username = config["username"];
     this.password = config["password"];
+    this.autolock = config["autolock"];
 
     this.lockservice = new Service.LockMechanism(this.name);
 
@@ -144,13 +145,16 @@ LockAccessory.prototype.setState = function(state, callback) {
 
             callback(null); // success
 
-            var self = this;
-            setTimeout(function() {
-                if (currentState == Characteristic.LockTargetState.UNSECURED) { 
-                    self.lockservice
-                        .setCharacteristic(Characteristic.LockTargetState, Characteristic.LockTargetState.SECURED);
-                }
-            }, 5000);
+            if (this.autolock)
+            {
+              var self = this;
+                setTimeout(function() {
+                    if (currentState == Characteristic.LockTargetState.UNSECURED) { 
+                        self.lockservice
+                            .setCharacteristic(Characteristic.LockTargetState, Characteristic.LockTargetState.SECURED);
+                    }
+                 }, 5000);
+            }
         }
         else {
             this.log("Error '%s' setting lock state. Response: %s", err, body);
