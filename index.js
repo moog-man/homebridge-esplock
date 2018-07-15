@@ -16,6 +16,11 @@ function LockAccessory(log, config) {
     this.username = config["username"];
     this.password = config["password"];
     this.autolock = config["autolock"];
+    
+    if (this.autolock == "")
+    {
+        this.autolock = "true" ; // create old behaviour when autolock variable is missing in the config
+    }
 
     this.lockservice = new Service.LockMechanism(this.name);
 
