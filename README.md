@@ -10,7 +10,8 @@ Example config.json:
             "url": "your-custom-or-homegrown-service-url",
 			"lock-id": "1",
             "username" : "your-username",
-			"password" : "your-password"
+			"password" : "your-password",
+	    "autolock" : "true"
         }
       ]
     }
