@@ -1,16 +1,16 @@
 {
-    "name": "homebridge-esplock",
-    "version": "1.0.4",
+    "name": "homebridge-esplock2",
+    "version": "1.0.5",
     "description": "HTTP controlled ESP8266 lock accessory plugin for Homebridge",
     "author": {
-        "name": "yancan#aprbrother.com"
+        "name": "mschorer#me.com"
     },
     "keywords": [
         "homebridge-plugin"
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/volca/homebridge-esplock"
+        "url": "https://github.com/moog-man/homebridge-esplock"
     },
     "engines": {
         "node": ">=0.12.0",
